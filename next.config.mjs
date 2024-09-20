@@ -23,7 +23,6 @@ const nextConfig = {
       '@lobehub/ui',
       'gpt-tokenizer',
       'chroma-js',
-      'shiki',
     ],
     webVitalsAttribution: ['CLS', 'LCP'],
   },
@@ -108,6 +107,16 @@ const nextConfig = {
   output: buildWithDocker ? 'standalone' : undefined,
   reactStrictMode: true,
   redirects: async () => [
+    {
+      destination: '/sitemap-index.xml',
+      permanent: true,
+      source: '/sitemap.xml',
+    },
+    {
+      destination: '/discover',
+      permanent: true,
+      source: '/market',
+    },
     {
       destination: '/settings/common',
       permanent: true,
